@@ -15,7 +15,7 @@ Start Prolog and load the file:
 
 Prolog
 
-?- consult('time.pl').
+?- consult('timetable.pl').
 
 2. Generate the Timetable
 Run the main predicate. This will solve the schedule and save it in memory.
