@@ -28,3 +28,14 @@ required_hours(cs3135, 2).
 required_hours(eu3101, 4).
 
 required_hours(ssi, 2).
+
+% Staff Assignments
+
+teaches(ms_y_kalyani, cs3121).
+teaches(mr_s_thadchanamoorthy, cs3121).
+teaches(ms_j_janani, cs3122).
+teaches(ms_k_krishnaraj, cs3123).
+teaches(ms_s_priyanka, cs3124).
+teaches(mr_t_thanujan, cs3135).
+teaches(mr_t_baskar, eu3101).
+
