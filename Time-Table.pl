@@ -26,7 +26,6 @@ required_hours(cs3124, 2).
 required_hours(cs3114, 2).
 required_hours(cs3135, 2).
 required_hours(eu3101, 4).
-
 required_hours(ssi, 2).
 
 % Staff Assignments
@@ -39,3 +38,14 @@ teaches(ms_s_priyanka, cs3124).
 teaches(mr_t_thanujan, cs3135).
 teaches(mr_t_baskar, eu3101).
 
+%Instructors and Demonstrators
+
+instuctor(mr_w_sriwathsan, cs3111).
+instuctor(mr_b_christo_paul, cs3112).
+instuctor(mr_w_sriwathsan, cs3113).
+instuctor(mr_b_christo_paul, cs3114).
+
+demonstrator(ms_w_d_sewwandi, cs3111).
+demonstrator(ms_w_d_sewwandi, cs3112).
+demonstrator(mr_i_m_g_d_bandara, cs3113).
+demonstrator(mr_i_m_g_d_bandara, cs3114).
