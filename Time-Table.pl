@@ -13,3 +13,18 @@ course(cs3114, 'Practical work on CS3124', practical).
 course(cs3135, 'Theory of Computing', theory).
 course(eu3101, 'Foundation of Management', theory).
 course(ssi, 'Staff-Student interaction', meeting). % 'ssi' is the short ID
+
+% Required Hours per Course
+
+required_hours(cs3121, 3).
+required_hours(cs3111, 2).
+required_hours(cs3122, 2).
+required_hours(cs3112, 2).
+required_hours(cs3123, 3).
+required_hours(cs3113, 2).
+required_hours(cs3124, 2).
+required_hours(cs3114, 2).
+required_hours(cs3135, 2).
+required_hours(eu3101, 4).
+
+required_hours(ssi, 2).
