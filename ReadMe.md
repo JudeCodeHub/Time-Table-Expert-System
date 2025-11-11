@@ -16,6 +16,7 @@ Start Prolog and load the file:
 Prolog
 
 ?- consult('time.pl').
+
 2. Generate the Timetable
 Run the main predicate. This will solve the schedule and save it in memory.
 
@@ -23,6 +24,7 @@ Prolog
 
 ?- generate_timetable.
 % true.
+
 3. Show the Timetable
 Run the display predicate to print the final, clean table.
 
