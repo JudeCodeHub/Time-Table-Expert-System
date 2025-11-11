@@ -193,17 +193,13 @@ course_constraint(C, L) :-
 
 generate_timetable :-
     cleanup,
-    % 1. Find all courses and their constraint level (count of available slots)
-    findall(L-C, course_constraint(C, L), Pairs),
-    
-    % 2. Sort courses by slot count (L), from fewest slots to most
-    keysort(Pairs, SortedPairs),
-    
-    % 3. Get the list of course names in the new smart order
-    pairs_values(SortedPairs, CoursesToSchedule),
-    
-    % 4. Schedule in this "most constrained first" order
+    get_scheduled_order(CoursesToSchedule),
     forall(member(C, CoursesToSchedule), schedule_course(C)).
+
+get_scheduled_order(SortedCourses) :-
+    findall(SlotCount-Course, course_constraint(Course, SlotCount), ConstraintPairs),
+    keysort(ConstraintPairs, SortedPairs),
+    pairs_values(SortedPairs, SortedCourses).
 
 
 % Display as table
