@@ -205,9 +205,7 @@ get_scheduled_order(SortedCourses) :-
 % Display as table
 show_timetable :-
     Days = [monday,tuesday,wednesday,thursday,friday],
-    
     Headers = [time, mon, tue, wed, thu, fri], 
-    
     Times = [830,930,1030,1130,1330,1430,1530],
     
     nl, write('============================= TIMETABLE ================================================'), nl,
@@ -218,9 +216,8 @@ show_timetable :-
     write('-----------------------------------------------------------------------------------------'), nl,
     
     forall(member(T, Times),
-           (format('~w\t\t', [T]), % Print the time, e.g., "830"
+           (format('~w\t\t', [T]),
             
-            % Loop through original day atoms (monday, tuesday, etc.) for lookup
             forall(member(D, Days), 
                    ( (schedule(C,D,T), !, format('~w\t\t',[C]))
                    ; write('-\t\t'))),
