@@ -178,3 +178,30 @@ assign_slots(C, [(D,T)|R], H) :-
 assign_slots(C, [_|R], H) :- 
     H > 0,
     assign_slots(C, R, H). 
+
+
+    % Generate whole timetable
+
+cleanup :- retractall(schedule(_,_,_)).
+
+
+course_constraint(C, L) :-
+    course(C, _, _),
+    findall((D,T), available_slot(C,D,T), Slots),
+    sort(Slots, SUnique),
+    length(SUnique, L).
+
+
+generate_timetable :-
+    cleanup,
+    % 1. Find all courses and their constraint level (count of available slots)
+    findall(L-C, course_constraint(C, L), Pairs),
+    
+    % 2. Sort courses by slot count (L), from fewest slots to most
+    keysort(Pairs, SortedPairs),
+    
+    % 3. Get the list of course names in the new smart order
+    pairs_values(SortedPairs, CoursesToSchedule),
+    
+    % 4. Schedule in this "most constrained first" order
+    forall(member(C, CoursesToSchedule), schedule_course(C)).
