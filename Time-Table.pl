@@ -141,3 +141,20 @@ related_theory(cs3112, cs3122).
 related_theory(cs3113, cs3123).
 related_theory(cs3114, cs3124).
 
+% Slot availability
+
+available_slot(Course, D, T) :-
+    course(Course, _, theory),
+    teaches(L, Course),
+    lecturer_available(L, D, T).
+
+available_slot(Course, D, T) :-
+    course(Course, _, practical),
+    instuctor(I, Course),
+    demonstrator(Demo, Course),
+    lecturer_available(I, D, T),
+    lecturer_available(Demo, D, T).
+
+
+available_slot(ssi, wednesday, 1330).
+available_slot(ssi, wednesday, 1430).
