@@ -1,4 +1,5 @@
 Intelligent Timetable Generator
+
 <img src="https://img.shields.io/badge/Made%20with-Prolog-blue.svg" alt="Made with Prolog">
 
 A simple expert system built in Prolog that automatically generates a conflict-free university course timetable.
