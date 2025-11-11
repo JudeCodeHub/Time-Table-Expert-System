@@ -158,3 +158,23 @@ available_slot(Course, D, T) :-
 
 available_slot(ssi, wednesday, 1330).
 available_slot(ssi, wednesday, 1430).
+
+% Scheduling
+
+schedule_course(C) :-
+    required_hours(C, H),
+    findall((D,T), available_slot(C,D,T), Slots),
+    sort(Slots, SUnique), 
+    assign_slots(C, SUnique, H). 
+
+assign_slots(_, _, 0). 
+assign_slots(C, [(D,T)|R], H) :-
+    H > 0,
+    \+ schedule(_, D, T), 
+    !,                     
+    assertz(schedule(C, D, T)),
+    H1 is H - 1,
+    assign_slots(C, R, H1).
+assign_slots(C, [_|R], H) :- 
+    H > 0,
+    assign_slots(C, R, H). 
