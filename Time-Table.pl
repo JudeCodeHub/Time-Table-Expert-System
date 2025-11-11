@@ -160,7 +160,6 @@ available_slot(ssi, wednesday, 1330).
 available_slot(ssi, wednesday, 1430).
 
 % Scheduling
-
 schedule_course(C) :-
     required_hours(C, H),
     findall((D,T), available_slot(C,D,T), Slots),
@@ -205,3 +204,29 @@ generate_timetable :-
     
     % 4. Schedule in this "most constrained first" order
     forall(member(C, CoursesToSchedule), schedule_course(C)).
+
+
+% Display as table
+show_timetable :-
+    Days = [monday,tuesday,wednesday,thursday,friday],
+    
+    Headers = [time, mon, tue, wed, thu, fri], 
+    
+    Times = [830,930,1030,1130,1330,1430,1530],
+    
+    nl, write('============================= TIMETABLE ================================================'), nl,
+    
+    forall(member(H, Headers), (format('~w\t\t',[H]))),
+    nl,
+    
+    write('-----------------------------------------------------------------------------------------'), nl,
+    
+    forall(member(T, Times),
+           (format('~w\t\t', [T]), % Print the time, e.g., "830"
+            
+            % Loop through original day atoms (monday, tuesday, etc.) for lookup
+            forall(member(D, Days), 
+                   ( (schedule(C,D,T), !, format('~w\t\t',[C]))
+                   ; write('-\t\t'))),
+            nl)),
+    write('========================================================================================='), nl.
