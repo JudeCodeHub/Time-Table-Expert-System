@@ -49,3 +49,88 @@ demonstrator(ms_w_d_sewwandi, cs3111).
 demonstrator(ms_w_d_sewwandi, cs3112).
 demonstrator(mr_i_m_g_d_bandara, cs3113).
 demonstrator(mr_i_m_g_d_bandara, cs3114).
+
+% Time Slots
+
+time_slot(Day, Time) :-
+    member(Day, [monday, tuesday, wednesday, thursday, friday]),
+    member(Time, [830,930,1030,1130,1330,1430,1530]).
+
+% Lecturer Availability
+
+
+% CS3121
+lecturer_available(ms_y_kalyani, tuesday, 830).
+lecturer_available(ms_y_kalyani, tuesday, 930).
+lecturer_available(ms_y_kalyani, friday, 1030).
+lecturer_available(ms_y_kalyani, friday, 1130).
+lecturer_available(ms_y_kalyani, monday, 1030).
+lecturer_available(ms_y_kalyani, wednesday, 830).
+
+lecturer_available(mr_s_thadchanamoorthy, tuesday, 830).
+lecturer_available(mr_s_thadchanamoorthy, tuesday, 930).
+lecturer_available(mr_s_thadchanamoorthy, wednesday, 830).
+lecturer_available(mr_s_thadchanamoorthy, friday, 930).
+
+% CS3122
+lecturer_available(ms_j_janani, thursday, 1330).
+lecturer_available(ms_j_janani, thursday, 1430).
+lecturer_available(ms_j_janani, monday, 830).
+lecturer_available(ms_j_janani, monday, 930).
+lecturer_available(ms_j_janani, tuesday, 930).
+
+% CS3123
+lecturer_available(ms_k_krishnaraj, monday, 1330).
+lecturer_available(ms_k_krishnaraj, tuesday, 1030).
+lecturer_available(ms_k_krishnaraj, tuesday, 1130).
+lecturer_available(ms_k_krishnaraj, thursday, 830).
+lecturer_available(ms_k_krishnaraj, thursday, 930).
+
+% CS3124
+lecturer_available(ms_s_priyanka, friday, 830).
+lecturer_available(ms_s_priyanka, friday, 930).
+lecturer_available(ms_s_priyanka, wednesday, 1030).
+lecturer_available(ms_s_priyanka, wednesday, 1130).
+lecturer_available(ms_s_priyanka, thursday, 930).
+
+% CS3135
+lecturer_available(mr_t_thanujan, tuesday, 1330).
+lecturer_available(mr_t_thanujan, tuesday, 1430).
+lecturer_available(mr_t_thanujan, wednesday, 930).
+
+% EU3101
+lecturer_available(mr_t_baskar, monday, 1030).
+lecturer_available(mr_t_baskar, monday, 1130).
+lecturer_available(mr_t_baskar, thursday, 1030).
+lecturer_available(mr_t_baskar, thursday, 1130).
+lecturer_available(mr_t_baskar, tuesday, 1330).
+lecturer_available(mr_t_baskar, friday, 1030).
+
+% Practical staff
+lecturer_available(mr_w_sriwathsan, thursday, 830).
+lecturer_available(mr_w_sriwathsan, thursday, 930).
+lecturer_available(mr_w_sriwathsan, friday, 1030).
+lecturer_available(mr_w_sriwathsan, friday, 1130).
+lecturer_available(mr_w_sriwathsan, wednesday, 1430).
+lecturer_available(mr_w_sriwathsan, tuesday, 1330).
+
+lecturer_available(ms_w_d_sewwandi, monday, 830).
+lecturer_available(ms_w_d_sewwandi, monday, 930).
+lecturer_available(ms_w_d_sewwandi, friday, 1030).
+lecturer_available(ms_w_d_sewwandi, friday, 1130).
+lecturer_available(ms_w_d_sewwandi, thursday, 1330).
+lecturer_available(ms_w_d_sewwandi, tuesday, 930).
+
+lecturer_available(mr_b_christo_paul, monday, 830).
+lecturer_available(mr_b_christo_paul, monday, 930).
+lecturer_available(mr_b_christo_paul, wednesday, 1030).
+lecturer_available(mr_b_christo_paul, wednesday, 1130).
+lecturer_available(mr_b_christo_paul, thursday, 1430).
+lecturer_available(mr_b_christo_paul, tuesday, 930).
+
+lecturer_available(mr_i_m_g_d_bandara, thursday, 830).
+lecturer_available(mr_i_m_g_d_bandara, thursday, 930).
+lecturer_available(mr_i_m_g_d_bandara, wednesday, 1030).
+lecturer_available(mr_i_m_g_d_bandara, wednesday, 1130).
+lecturer_available(mr_i_m_g_d_bandara, wednesday, 1430).
+
