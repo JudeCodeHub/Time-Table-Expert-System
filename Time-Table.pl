@@ -134,3 +134,10 @@ lecturer_available(mr_i_m_g_d_bandara, wednesday, 1030).
 lecturer_available(mr_i_m_g_d_bandara, wednesday, 1130).
 lecturer_available(mr_i_m_g_d_bandara, wednesday, 1430).
 
+% Relations
+
+related_theory(cs3111, cs3121).
+related_theory(cs3112, cs3122).
+related_theory(cs3113, cs3123).
+related_theory(cs3114, cs3124).
+
