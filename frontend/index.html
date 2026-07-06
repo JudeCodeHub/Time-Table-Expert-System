@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>University Timetable Expert System</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="health-banner" class="banner error hidden">
+        Backend not reachable. Is Flask running?
+    </div>
+
+    <div class="container">
+        <header>
+            <h1>University Timetable</h1>
+            <div class="controls">
+                <button id="btn-generate" class="btn primary">Generate Timetable</button>
+                <button id="btn-reset" class="btn secondary">Reset</button>
+            </div>
+        </header>
+
+        <div id="loading" class="hidden">
+            <div class="spinner"></div>
+            <p>Generating schedule...</p>
+        </div>
+
+        <div id="warnings-box" class="message-box warning hidden">
+            <h3>Warnings</h3>
+            <ul id="warnings-list"></ul>
+        </div>
+
+        <div id="errors-box" class="message-box error hidden">
+            <h3>Error</h3>
+            <p id="error-message"></p>
+        </div>
+
+        <div class="table-container">
+            <table id="timetable-grid">
+                <thead>
+                    <tr>
+                        <th>Time</th>
+                        <th>Monday</th>
+                        <th>Tuesday</th>
+                        <th>Wednesday</th>
+                        <th>Thursday</th>
+                        <th>Friday</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Rows will be dynamically injected here -->
+                </tbody>
+            </table>
+            <div id="empty-state" class="empty-state">
+                No timetable generated yet
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
